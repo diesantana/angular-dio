@@ -8,5 +8,6 @@ Repositório do curso de Angular
 O primeiro contato com o framework
 
 - Web componentes
+- TypeScript para Angular
 
 
