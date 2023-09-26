@@ -1,0 +1,10 @@
+<label for="name">Digite seu Nome:</label>
+<input [(ngModel)]="nome" 
+        type="text" 
+        id="name" 
+        placeholder="Digite o seu nome"
+>
+<p>{{ 'Olá '+ nome  +' , Bem vindo!'}}</p>
+
+<p [style.color]="corTexto">Este texto tem uma cor dinâmica.</p>
+

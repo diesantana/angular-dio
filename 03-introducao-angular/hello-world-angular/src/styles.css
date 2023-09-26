@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+button{
+    padding: .4rem  1rem;
+    border-radius: .5rem;
+    border-color: transparent;
+    cursor: pointer;
+    background-color: cadetblue;
+    margin-bottom: 1rem;
+}
