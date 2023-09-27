@@ -9,4 +9,5 @@ O primeiro contato com o framework
 
 - Web componentes
 - TypeScript para Angular
+- Introdução ao Angular
 
