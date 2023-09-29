@@ -1,0 +1,64 @@
+
+<p>Antes do ng-template</p>
+
+<ng-template #MeuTemplate>
+    <p>Conteúdo dinâmico, vem do ng-template</p>
+</ng-template>
+
+<div *ngIf="exibirConteudo; then MeuTemplate"></div>
+
+<p>Depois do ng-template</p>
+
+<ul>
+    <li *ngFor="let fruta of frutas; let i = index;">
+       {{ i }} - {{ fruta }}
+    </li>
+</ul>
+
+
+<button (click)="adicionar()">Adicionar</button>
+<button (click)="remover()">Remover</button>
+
+
+<h1> ngSwitch</h1>
+
+<div [ngSwitch]="typeUser">
+
+    <div *ngSwitchCase="'user'">
+        <h2>User</h2>
+        <ul>
+            <li>Editar perfil</li>
+            <li>Adicionar cartão</li>
+        </ul>
+    </div>
+    
+    <div *ngSwitchCase="'admin'">
+        <h2>Admin</h2>
+        <ul>
+            <li>Editar perfil</li>
+            <li>Adicionar cartão</li>
+            <li>Gerenciar User</li>
+        </ul>
+    </div>
+
+    <div *ngSwitchCase="'super'">
+        <h2>Super</h2>
+        <ul>
+            <li>Editar perfil</li>
+            <li>Adicionar cartão</li>
+            <li>Gerenciar User</li>
+            <li>Gerenciar Admin</li>
+        </ul>
+    </div>
+
+    <div *ngSwitchDefault>
+        <h2>Usuário não idenficiado</h2>
+        <p>Sem permissões</p>
+    </div>
+
+
+</div>
+
+
+
+
