@@ -1782,3 +1782,35 @@ Conteúdo Projetado
    ```
 
 2. Use o componente `seu-componente` em seu template principal e insira o conteúdo desejado entre as tags `<app-seu-componente>`. O conteúdo inserido será projetado no local onde a diretiva `ng-content` foi definida no template do componente.
+
+
+
+# Exercício 44: Criando um Submódulo
+
+Neste exercício, você deve criar um submódulo em um projeto Angular existente.
+
+**Tarefa:**
+
+1. Crie um novo submódulo chamado `dashboard` no seu projeto Angular usando o Angular CLI.
+
+2. No submódulo `dashboard`, crie um componente chamado `dashboard.component`.
+
+3. No componente `dashboard.component`, exiba uma mensagem simples no template, como "Bem-vindo ao Painel de Controle".
+
+4. Adicione o `dashboard.module` ao seu módulo principal (geralmente `app.module`) como um módulo importado.
+
+5. Crie uma rota para o componente `dashboard.component` no arquivo de rotas (`app-routing.module`) para que você possa acessá-lo via URL.
+
+# Exercício 45: Utilizando um Submódulo
+
+Neste exercício, você deve utilizar o submódulo criado no Exercício 1 em um componente principal.
+
+**Tarefa:**
+
+1. No componente principal do seu projeto Angular (por exemplo, `app.component`), adicione um botão ou link que permita a navegação para o componente `dashboard.component` criado no Exercício 1.
+
+2. Configure a rota para direcionar para o componente `dashboard.component` quando o botão ou link for clicado.
+
+3. Ao clicar no botão ou link, o componente `dashboard.component` do submódulo deve ser carregado e exibido no template do componente principal.
+
+Este exercício ajudará você a compreender como utilizar um submódulo em um projeto Angular existente e como configurar rotas para acessar componentes dentro desse submódulo a partir do componente principal.
