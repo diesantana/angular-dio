@@ -1,0 +1,11 @@
+<h1>Exercício 13</h1>
+<p>Neste exercício, você deve criar um parágrafo que aplica uma classe de estilo de forma condicional usando vinculação de classe.</p>
+<hr>
+
+<p [class.destaque]="estilo">
+    {{ estilo ? 'Este parágrafo usa a classe .destaque' : 'Este parágrafo não usa a classe destaque' }}
+</p>
+
+<button (click)="alterarEstilo()">Alterar estilo</button>
+
+

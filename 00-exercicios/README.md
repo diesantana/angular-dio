@@ -47,7 +47,7 @@ Olá, John Doe!
 
 ### **Exemplo de Entrada:**
 ```html
-<app-saudacao [nome]="John Doe"></app-saudacao>
+<app-saudacao [nome]="'John Doe'"></app-saudacao>
 ```
 
 
@@ -60,7 +60,7 @@ Olá, John Doe!
 
 2. No arquivo `saudacao.component.ts`, defina uma propriedade de entrada chamada `nome` usando o decorador `@Input()`:
    ```typescript
-   @Input() nome: string;
+   @Input() nome: string = '';
    ```
 
 3. No template do componente `saudacao`, exiba o valor de `nome`:
@@ -68,7 +68,8 @@ Olá, John Doe!
    Olá, {{ nome }}!
    ```
 
-4. No template onde deseja usar o componente `saudacao`, passe um valor para a propriedade `nome` usando a sintaxe `[nome]="Valor"`.
+4. No template onde deseja usar o componente `saudacao`, passe um valor para a propriedade `nome` usando a sintaxe `[nome]="'Valor'"`.  
+O valor deve ser passado entre as simples porque se trata de uma string. `"'value here'"`
 
 <br/>
 
@@ -1378,3 +1379,406 @@ País: Brasil, Capital: Brasília
      paisSelecionado = this.brasil;
    }
    ```
+
+
+<br/>
+<br/>
+
+## Exercício 34: Uso Básico do `ngClass`
+Neste exercício, você deve criar um componente que utiliza a diretiva `ngClass` para aplicar classes CSS condicionalmente a um elemento de parágrafo.
+
+**Saída Esperada:**
+```
+Texto em Vermelho e Negrito
+```
+
+**Exemplo de Entrada:**
+```html
+<p [ngClass]="{'vermelho': true, 'negrito': true}">Texto em Vermelho e Negrito</p>
+```
+
+
+### Solução:
+
+1. Crie um novo componente usando o Angular CLI com o comando:
+   ```
+   ng generate component class-basico
+   ```
+
+2. No arquivo `class-basico.component.ts`, defina as classes CSS que você deseja aplicar como propriedades no componente:
+   ```typescript
+   import { Component } from '@angular/core';
+
+   @Component({
+     selector: 'app-class-basico',
+     template: `<p [ngClass]="{'vermelho': true, 'negrito': true}">Texto em Vermelho e Negrito</p>`,
+     styles: [`
+       .vermelho {
+         color: red;
+       }
+       .negrito {
+         font-weight: bold;
+       }
+     `]
+   })
+   export class ClassBasicoComponent {}
+   ```
+
+<br/>
+<br/>
+
+## Exercício 35: Uso de `ngClass` com Expressão
+Neste exercício, você deve criar um componente que utiliza a diretiva `ngClass` com uma expressão para aplicar uma classe CSS condicionalmente com base em uma variável `italicoAtivo`.
+
+**Saída Esperada:**
+```
+Texto em Itálico
+```
+
+**Exemplo de Entrada:**
+```html
+<p [ngClass]="{'italico': italicoAtivo}">Texto em Itálico</p>
+```
+
+
+### Solução:
+
+1. Crie um novo componente usando o Angular CLI com o comando:
+   ```
+   ng generate component class-expressao
+   ```
+
+2. No arquivo `class-expressao.component.ts`, defina uma propriedade `italicoAtivo` no componente e altere sua classe com base nessa propriedade:
+   ```typescript
+   import { Component } from '@angular/core';
+
+   @Component({
+     selector: 'app-class-expressao',
+     template: `<p [ngClass]="{'italico': italicoAtivo}">Texto em Itálico</p>`,
+     styles: [`
+       .italico {
+         font-style: italic;
+       }
+     `]
+   })
+   export class ClassExpressaoComponent {
+     italicoAtivo = true;
+   }
+   ```
+
+<br/>
+<br/>
+
+## Exercício 36: Uso Básico do `ngStyle`
+Neste exercício, você deve criar um componente que utiliza a diretiva `ngStyle` para aplicar estilos condicionalmente a um elemento de parágrafo.
+
+**Saída Esperada:**
+```
+Texto em Vermelho e Tamanho 24px
+```
+
+**Exemplo de Entrada:**
+```html
+<p [ngStyle]="{'color': 'red', 'font-size.px': 24}">Texto em Vermelho e Tamanho 24px</p>
+```
+
+
+### Solução:
+
+1. Crie um novo componente usando o Angular CLI com o comando:
+   ```
+   ng generate component style-basico
+   ```
+
+2. No arquivo `style-basico.component.ts`, defina os estilos CSS que você deseja aplicar como propriedades no componente:
+   ```typescript
+   import { Component } from '@angular/core';
+
+   @Component({
+     selector: 'app-style-basico',
+     template: `<p [ngStyle]="{'color': 'red', 'font-size.px': 24}">Texto em Vermelho e Tamanho 24px</p>`
+   })
+   export class StyleBasicoComponent {}
+   ```
+
+<br/>
+<br/>
+
+## Exercício 37: Uso de `ngStyle` com Expressão
+Neste exercício, você deve criar um componente que utiliza a diretiva `ngStyle` com uma expressão para aplicar um estilo condicionalmente com base em uma variável `tamanhoFonte`.
+
+**Saída Esperada:**
+```
+Texto em Tamanho 16px
+```
+
+**Exemplo de Entrada:**
+```html
+<p [ngStyle]="{'font-size.px': tamanhoFonte}">Texto em Tamanho 16px</p>
+```
+
+
+### Solução:
+
+1. Crie um novo componente usando o Angular CLI com o comando:
+   ```
+   ng generate component style-expressao
+   ```
+
+2. No arquivo `style-expressao.component.ts`, defina uma propriedade `tamanhoFonte` no componente e altere o estilo com base nessa propriedade:
+   ```typescript
+   import { Component } from '@angular/core';
+
+   @Component({
+     selector: 'app-style-expressao',
+     template: `<p [ngStyle]="{'font-size.px': tamanhoFonte}">Texto em Tamanho 16px</p>`
+   })
+   export class StyleExpressaoComponent {
+     tamanhoFonte = 16;
+   }
+   ```
+
+
+<br/>
+<br/>
+
+## Exercício 38: Uso Básico do `ngModel`
+Neste exercício, você deve criar um componente que utiliza a diretiva `ngModel` para vincular um valor de input a uma propriedade e exibir o valor em um parágrafo.
+
+**Saída Esperada:**
+```
+Valor do Input: Hello, World!
+```
+
+**Exemplo de Entrada:**
+```html
+<input [(ngModel)]="mensagem" (ngModelChange)="onInputChange()">
+<p>Valor do Input: {{ mensagem }}</p>
+```
+
+
+### Solução:
+
+1. Importe `FormsModule` em seu módulo Angular (geralmente `app.module.ts`) para habilitar o uso de `ngModel`:
+   ```typescript
+   import { FormsModule } from '@angular/forms';
+
+   @NgModule({
+     imports: [
+       // ...
+       FormsModule,
+     ],
+     // ...
+   })
+   ```
+
+2. No arquivo `seu-componente.component.ts`, defina uma propriedade `mensagem` e um método `onInputChange()`:
+   ```typescript
+   import { Component } from '@angular/core';
+
+   @Component({
+     selector: 'app-seu-componente',
+     template: `
+       <input [(ngModel)]="mensagem" (ngModelChange)="onInputChange()">
+       <p>Valor do Input: {{ mensagem }}</p>
+     `
+   })
+   export class SeuComponenteComponent {
+     mensagem = 'Hello, World!';
+
+     onInputChange() {
+       // Lógica a ser executada quando o valor do input muda
+     }
+   }
+   ```
+
+<br/>
+<br/>
+
+## Exercício 39: Uso de `ngModel` com Formulário
+  Neste exercício, você deve criar um componente que utiliza a diretiva `ngModel` em um formulário para vincular o valor de um input a uma propriedade e exibir o valor em um parágrafo.
+
+**Saída Esperada:**
+```
+Valor do Nome: John Doe
+```
+
+**Exemplo de Entrada:**
+```html
+<form #form="ngForm">
+  <input name="nome" [(ngModel)]="nome">
+</form>
+<p>Valor do Nome: {{ nome }}</p>
+```
+
+
+### Solução:
+
+1. Importe `FormsModule` em seu módulo Angular (geralmente `app.module.ts`) para habilitar o uso de `ngModel`:
+   ```typescript
+   import { FormsModule } from '@angular/forms';
+
+   @NgModule({
+     imports: [
+       // ...
+       FormsModule,
+     ],
+     // ...
+   })
+   ```
+
+2. No arquivo `seu-componente.component.ts`, defina uma propriedade `nome`:
+   ```typescript
+   import { Component } from '@angular/core';
+
+   @Component({
+     selector: 'app-seu-componente',
+     template: `
+       <form #form="ngForm">
+         <input name="nome" [(ngModel)]="nome">
+       </form>
+       <p>Valor do Nome: {{ nome }}</p>
+     `
+   })
+   export class SeuComponenteComponent {
+     nome = 'John Doe';
+   }
+   ```
+
+<br/>
+<br/>
+
+## Exercício 40: Uso Básico de `ngTemplate`
+Neste exercício, você deve criar um componente que utiliza a diretiva `ngTemplateOutlet` para renderizar um template personalizado.
+
+**Saída Esperada:**
+```
+Texto Personalizado
+```
+
+**Exemplo de Entrada:**
+```html
+<ng-container *ngTemplateOutlet="templateRef"></ng-container>
+<ng-template #templateRef>Texto Personalizado</ng-template>
+```
+
+
+### Solução:
+
+1. No arquivo `seu-componente.component.ts`, defina um template com uma referência de template local (`#templateRef`):
+   ```typescript
+   import { Component } from '@angular/core';
+
+   @Component({
+     selector: 'app-seu-componente',
+     template: `
+       <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+       <ng-template #templateRef>Texto Personalizado</ng-template>
+     `
+   })
+   export class SeuComponenteComponent {}
+   ```
+
+<br/>
+<br/>
+
+## Exercício 41: Uso de `ngTemplate` com Contexto
+Neste exercício, você deve criar um componente que utiliza a diretiva `ngTemplateOutlet` para renderizar um template personalizado com um contexto específico.
+
+**Saída Esperada:**
+```
+Nome: John Doe
+```
+
+**Exemplo de Entrada:**
+```html
+<ng-container *ngTemplateOutlet="templateRef; context: { nome: 'John Doe' }"></ng-container>
+<ng-template #templateRef let-nome>Nome: {{ nome }}</ng-template>
+```
+
+
+### Solução:
+
+1. No arquivo `seu-componente.component.ts`, defina um template com uma referência de template local (`#templateRef`) e um contexto com uma variável `nome`:
+   ```typescript
+   import { Component } from '@angular/core';
+
+   @Component({
+     selector: 'app-seu-componente',
+     template: `
+       <ng-container *ngTemplateOutlet="templateRef; context: { nome: 'John Doe' }"></ng-container>
+       <ng-template #templateRef let-nome>Nome: {{ nome }}</ng-template>
+     `
+   })
+   export class SeuComponenteComponent {}
+   ```
+
+<br/>
+<br/>
+
+## Exercício 42: Uso Básico de `ngContent`
+Neste exercício, você deve criar um componente que utiliza a diretiva `ngContent` para inserir conteúdo em seu template.
+
+**Saída Esperada:**
+```
+Conteúdo Inserido
+```
+
+**Exemplo de Entrada:**
+```html
+<app-seu-componente>Conteúdo Inserido</app-seu-componente>
+```
+
+
+### Solução:
+
+1. No arquivo `seu-componente.component.ts`, defina a diretiva `ng-content` em seu template:
+   ```typescript
+   import { Component } from '@angular/core';
+
+   @Component({
+     selector: 'app-seu-componente',
+     template: `
+       <p><ng-content></ng-content></p>
+     `
+   })
+   export class SeuComponenteComponent {}
+   ```
+
+2. Use o componente `seu-componente` em seu template principal e insira o conteúdo desejado entre as tags `<app-seu-componente>`.
+
+<br/>
+<br/>
+
+## Exercício 43: Uso de `ngContent` com Projeção
+  Neste exercício, você deve criar um componente que utiliza a diretiva `ngContent` para projetar e exibir conteúdo inserido.
+
+**Saída Esperada:**
+```
+Conteúdo Projetado
+```
+
+**Exemplo de Entrada:**
+```html
+<app-seu-componente>
+  <p>Conteúdo Projetado</p>
+</app-seu-componente>
+```
+
+
+### Solução:
+
+1. No arquivo `seu-componente.component.ts`, defina a diretiva `ng-content` em seu template para projetar o conteúdo:
+   ```typescript
+   import { Component } from '@angular/core';
+
+   @Component({
+     selector: 'app-seu-componente',
+     template: `
+       <p><ng-content></ng-content></p>
+     `
+   })
+   export class SeuComponenteComponent {}
+   ```
+
+2. Use o componente `seu-componente` em seu template principal e insira o conteúdo desejado entre as tags `<app-seu-componente>`. O conteúdo inserido será projetado no local onde a diretiva `ng-content` foi definida no template do componente.

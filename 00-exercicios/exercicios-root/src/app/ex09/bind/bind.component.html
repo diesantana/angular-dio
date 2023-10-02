@@ -1,0 +1,14 @@
+<h1>Exercício 09</h1>
+<p>Neste exercício, você deve criar um dropdown que mantém a opção selecionada em sincronia com uma variável no componente usando Two-Way Binding.</p>
+
+
+<label for="time">Escolhe um time: </label>
+
+<select name="time" id="time" [(ngModel)]="timeEscolido">
+    <option value="Corinthians">Corinthians</option>
+    <option value="Flamengo">Flamengo</option>
+    <option value="Palmeiras">Palmeiras</option>
+    <option value="São Paulo">São Paulo</option>
+</select>
+
+<p>Opção Selecionada: {{ timeEscolido }}</p>

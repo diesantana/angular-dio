@@ -1,0 +1,31 @@
+<p [ngClass]="estilo">diretivas-atributo works!</p>
+<button (click)="trocar()">Trocar</button>
+
+<h1 [ngStyle]="{'font-size.rem': tamanhoFont, 'background': corFunto}">Curso Angular</h1>
+
+<h1>Lista de compras</h1>
+<input type="text" [(ngModel)]="item">
+<button (click)="adicionar()">Adicionar</button>
+
+
+<p>{{ item }}</p>
+
+<h3>Itens adicionados a lista</h3>
+<ul>
+    <li *ngFor="let item of lista">{{item}}</li>
+</ul>
+
+
+<ng-template [ngIf]="mostrarElemento">
+    <a href="#">Finalizar compra</a>
+</ng-template>
+
+
+<!-- Componente Filho -->
+<div>
+    <ng-content select="h1"></ng-content>
+    <p>Conteúdo interno do componente filho</p>
+    <ng-content select="p"></ng-content>
+</div>
+
+

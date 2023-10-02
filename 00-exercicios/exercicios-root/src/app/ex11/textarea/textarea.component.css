@@ -1,0 +1,8 @@
+hr{
+    margin-bottom: 2rem;
+}
+
+label{
+    display: flex;
+    margin-bottom: .5rem;
+}

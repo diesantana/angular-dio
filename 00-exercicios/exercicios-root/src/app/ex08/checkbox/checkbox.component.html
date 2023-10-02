@@ -1,0 +1,9 @@
+
+<h1>Exercício 08</h1>
+<p>Neste exercício, você deve criar uma caixa de seleção (checkbox) que mantém seu estado em sincronia com uma variável no componente usando Two-Way Binding.
+</p>
+
+<label for="termos">Estou ciente dos termos</label>
+<input type="checkbox" name="termos" [(ngModel)]="isChecked" id="termos">
+
+<p>Estado atual: {{isChecked}}</p>

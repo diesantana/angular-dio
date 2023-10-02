@@ -1,0 +1,9 @@
+<h1>Exercício 12</h1>
+<p>Neste exercício, você deve criar um parágrafo com estilo de fundo condicional usando vinculação de estilos.</p>
+<hr>
+
+<p [style.background]="destacarFundo ? 'yellow' : 'transparent' ">
+        {{ destacarFundo ? 'Este parágrafo tem um fundo amarelo.' : 'Este parágrafo não tem destaque de fundo.' }}
+</p>
+
+<button (click)="alternarFundo()">Alterar destaque do parágrafo</button>

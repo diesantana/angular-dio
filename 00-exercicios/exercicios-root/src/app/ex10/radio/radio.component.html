@@ -1,0 +1,26 @@
+<h1>Exercício 10</h1>
+<p>Neste exercício, você deve criar um grupo de radio buttons que mantém a opção selecionada em sincronia com uma variável no componente usando Two-Way Binding.</p>
+<hr>
+
+
+<h2>Estações do ano</h2>
+<p>Seleciona a sua estação favorita:</p>
+
+
+<form>
+    <input type="radio" [(ngModel)]="opcaoSelecionada" name="estacaoAno" id="verao" value="Verao">
+    <label for="verao">Verão</label>
+
+    <input type="radio" [(ngModel)]="opcaoSelecionada" name="estacaoAno" id="outono" value="Outono">
+    <label for="outono">Outono</label>
+
+    <input type="radio" [(ngModel)]="opcaoSelecionada" name="estacaoAno" id="invero" value="Invero">
+    <label for="invero">Inverno</label>
+    
+    <input type="radio" [(ngModel)]="opcaoSelecionada" name="estacaoAno" id="primavera" value="Primavera">
+    <label for="primavera">Primavera</label>
+
+</form>
+
+
+<p>Opção Selecionada: {{ opcaoSelecionada }}</p>

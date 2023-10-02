@@ -1,5 +1,5 @@
 # 📕 Curso Angular | Bootcamp Santander 2023 
-## 👨‍💻 Trilha JS Angular + Java 
+## 👨‍💻 Trilha FullStack Angular + Java 
 
 Repositório do curso de Angular
 
@@ -10,4 +10,5 @@ O primeiro contato com o framework
 - Web componentes
 - TypeScript para Angular
 - Introdução ao Angular
-
+- Diretivas
+- Módulos Angular
