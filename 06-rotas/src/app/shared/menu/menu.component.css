@@ -1,0 +1,13 @@
+li{
+    list-style: none;
+    margin-bottom: 7px;
+}
+.activated{
+    font-size: larger;
+    color: red;
+}
+
+.destacado{
+    text-decoration: none;
+    background-color: yellow;
+}
