@@ -12,3 +12,4 @@ O primeiro contato com o framework
 - Introdução ao Angular
 - Diretivas
 - Módulos Angular
+- Rotas

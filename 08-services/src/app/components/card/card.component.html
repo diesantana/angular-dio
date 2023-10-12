@@ -1,0 +1,21 @@
+<div class="container">
+    <form class="form-container">
+        <label for="search">Buscar Pokemons</label>
+        <input [(ngModel)]="inputValue" type="text" name="search" id="search" placeholder="Digite um nome ou Id">
+        <button (click)="buscarPokemon()">Buscar</button>
+    </form>
+    
+    <div class="container-card">
+        <div class="name-card">
+            <h2>{{namePokemon}}</h2>
+        </div>
+        <div class="body-card">
+            <img src="{{imgPokemon}}" alt="{{altImgPokemon}}">
+        </div>
+        <div class="details-card">
+            <ul>
+                <li *ngFor="let typeName of typesPokemon">{{typeName}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
