@@ -1,0 +1,14 @@
+<div>
+    <h2>Lista de Tarefas</h2>
+
+    <div>
+        <input type="text" [(ngModel)]="novaTarefaTitulo" (keydown.enter)="adicionaTarefa()">
+        <button (click)="adicionaTarefa()">Adicionar Tarefa</button>
+    </div>
+    <ul>
+        <li *ngFor="let tarefa of tarefas" [ngClass]="{'completed': tarefa.completed}">
+            {{tarefa.title}}
+            <input type="checkbox" [ngModel]="tarefa.completed" (change)="toggleCompleted(tarefa)">
+        </li>
+    </ul>
+</div>
